@@ -1,0 +1,39 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Showroom.Car.controller.Bill"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page>
+				<headerContent height="100%">
+					<Bar>
+						<contentLeft>
+							<Toolbar>
+								<Image src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c46b.png" class="logoimg"/>
+							</Toolbar>
+						</contentLeft>
+					</Bar>
+				</headerContent>
+				<f:SimpleForm id="SimpleFormChange354" layout="ResponsiveGridLayout" title="Address" singleContainerFullSize="false">
+					<f:content>
+						<Label text="Name"/>
+						<Input placeholder="name" id="i1"/>
+						<Label text="Address"/>
+						<Input placeholder="Address" id="i2"></Input>
+						<Label text="Phone number"/>
+						<Input placeholder="nPhone number" id="i3"/>
+						<Label text="Mode of Cash"/>
+						<ComboBox value="{i18n>select}" id="i4" >
+							<items >
+								<core:Item text="Cash"></core:Item>
+								<core:Item text="Card"></core:Item>
+							</items>
+						</ComboBox>
+						<Label text="Date"/>
+						<DatePicker placeholder="Select Date" id="i5"></DatePicker>
+					</f:content>
+				</f:SimpleForm>
+				<Button text="bill" press="bill" id="buttonId"></Button>
+				<Button text="bill1" press="bill1"></Button>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,24 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		noDataText="No Products Found"
+		title="Select Product"
+		search="handleSearch"
+		confirm="handleClose"
+		cancel="handle"
+		items="{
+		path:'carjsn>/Production'
+		}"
+		id="list"
+		>
+		<!--<List id="list" >-->
+						<items >
+							<ObjectListItem title="{carjsn>CarName}" icon="{carjsn>image}"   type="Active" >
+								
+							</ObjectListItem>
+						</items>
+					<!--</List>-->
+		
+	</SelectDialog>
+</core:FragmentDefinition>

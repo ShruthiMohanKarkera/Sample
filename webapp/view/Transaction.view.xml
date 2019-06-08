@@ -1,0 +1,92 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Showroom.Car.controller.Transaction"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page >
+				<headerContent height="100%">
+					<Bar>
+						<contentLeft>
+							<Toolbar>
+								<Image src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c46b.png" class="logoimg"/>
+								<!--<toolSpaceBar/>-->
+							</Toolbar>
+						</contentLeft>
+					</Bar>
+				</headerContent>
+				<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+					<items>
+						<IconTabFilter iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Yearly Transaction" key="Ok">
+								<ToolbarSpacer/>
+					<!--<Button text="2018" icon="sap-icon://add" press="addepm"/>-->
+					<ComboBox value="2018" change="onSortTeam" id="combo">
+						<items >
+							<core:Item text="2015" id="i1" key="runs"></core:Item>
+							<core:Item text="2016" id="i2" key="avg"></core:Item>
+							<core:Item text="2017" id="i3" key="wickets"></core:Item>
+							<core:Item text="2018" key="year"></core:Item>
+						</items>
+					</ComboBox>
+					<Button text="graph" press="graph"></Button>
+							<Table items="{carjsn>/Eighteen}" itemPress="onItemPress" id="table" growing="true" growingThreshold="50">
+								<columns>
+									<Column >
+										<Text text="Month"/>
+									</Column>
+									<Column demandPopin="true" minScreenWidth="Tablet">
+										<Text text="No. of car sold/month"/>
+									</Column>
+									<Column demandPopin="true" minScreenWidth="Tablet">
+										<Text text="Car Prise		Rs.(Crore)"/>
+									</Column>
+									<Column demandPopin="true" minScreenWidth="Tablet">
+										<Text text="Total Amount    Rs.(Crore)"/>
+									</Column>
+								
+								</columns>
+								<items>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="{carjsn>month}"/>
+											<Text text="{carjsn>SoldCar}" />
+											<Text text="{carjsn>Price}"/>
+											<Text text="{carjsn>total}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</IconTabFilter>
+						<IconTabFilter iconColor="Critical" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Monthly Transaction" key="Heavy">
+							<Table items="{carjsn>/Sales}" itemPress="onItemPress" id="table1" growing="true" growingThreshold="50">
+								<columns>
+									<Column >
+										<Text text="Car name"/>
+									</Column>
+									<Column demandPopin="true" minScreenWidth="Tablet">
+										<Text text="No. of car sold/month"/>
+									</Column>
+									<Column demandPopin="true" minScreenWidth="Tablet">
+										<Text text="Car Prise"/>
+									</Column>
+									<Column demandPopin="true" minScreenWidth="Tablet">
+										<Text text="Total Amount"/>
+									</Column>
+								
+								</columns>
+								<items>
+									<ColumnListItem type="Active">
+										<cells>
+											<Text text="m"/>
+											<Text text=" nn" />
+											<Text text="nn"/>
+											<Text text="nm"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
